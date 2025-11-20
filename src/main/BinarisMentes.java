@@ -19,7 +19,7 @@ public class BinarisMentes {
     public static void main(String[] args){
         BinarisMentes prg = new BinarisMentes();
         prg.letrehozas();
-        //prg.mentes();
+        prg.mentes();
         prg.bettoltes();
         
     }
