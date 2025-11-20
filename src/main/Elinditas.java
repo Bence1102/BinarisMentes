@@ -16,13 +16,13 @@ public class Elinditas {
         
         gui.getjButton3().addActionListener(e -> {
             modelTomb[0].ujHarcos("Harcos");
-            JOptionPane.showMessageDialog(gui, "Harcos létrehozva!");
+            JOptionPane.showMessageDialog(gui, "Harcos támad!");
         });
 
        
         gui.getjButton5().addActionListener(e -> {
             modelTomb[0].ujVarazslo("Varázsló");
-            JOptionPane.showMessageDialog(gui, "Varázsló létrehozva!");
+            JOptionPane.showMessageDialog(gui, "Varázsló támad!");
         });
 
        
