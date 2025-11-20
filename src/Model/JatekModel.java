@@ -24,8 +24,12 @@ public class JatekModel implements Serializable {
         szereplok.add(harcos);
     }
 
-    public Karakter getVarazslo() { return varazslo; }
-    public Karakter getHarcos() { return harcos; }
+    public Karakter getVarazslo() { 
+        return varazslo; 
+    }
+    public Karakter getHarcos() { 
+        return harcos; 
+    }
 
     public String csata() {
         if (varazslo == null || harcos == null) {
