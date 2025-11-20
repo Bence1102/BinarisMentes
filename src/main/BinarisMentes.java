@@ -25,8 +25,11 @@ public class BinarisMentes {
     }
 
     private void letrehozas() {
-        karakter = new Karakter("Varokh","Lézercsáp","Drakorian", 1);
-        karakter.felvesz(new Targy("Lézerkard"));
+        karakter = new Karakter("Varokh", "Lézercsáp","Drakorian", 1);
+        System.out.println("id:" +karakter.getId());
+        karakter.felvesz(new Targy("Lézercsáp"));
+        karakter.setId();
+        System.out.println("id:" +karakter.getId());
     }
     
     public void mentes(){
@@ -42,7 +45,10 @@ public class BinarisMentes {
             Logger.getLogger(BinarisMentes.class.getName()).log(Level.SEVERE, null, ex);
         }finally{
             /*mindig lefut*/
-            System.out.println("mentés utén:");
+            System.out.println("mentés után:");
+            System.out.println(karakter);
+            System.out.println("kikapcsolás után:");
+            karakter=null;
             System.out.println(karakter);
         }
     }
@@ -52,11 +58,9 @@ public class BinarisMentes {
         try (FileInputStream fajlBe = new FileInputStream(fn);
             ObjectInputStream objBe = new ObjectInputStream(fajlBe);){
             karakter = (Karakter) objBe.readObject();
-            System.out.println(karakter);
-            
-            
+            karakter.setId();
             System.out.println("betöltés után");
-            
+            System.out.println(karakter);
             //ha AutoCloseable,akkor nem kel explicit close()
             //objKi.close();
         } catch (FileNotFoundException ex) {
@@ -67,7 +71,7 @@ public class BinarisMentes {
             Logger.getLogger(BinarisMentes.class.getName()).log(Level.SEVERE, null, ex);
         }finally{
             /*mindig lefut*/
-            System.out.println("mentés utén:");
+            System.out.println("mentés után:");
             System.out.println(karakter);
         }
     }

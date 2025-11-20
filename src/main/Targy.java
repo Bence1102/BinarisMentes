@@ -13,4 +13,9 @@ public class Targy implements Serializable {
     public String getLeiras() {
         return leiras;
     }
+    
+     @Override
+    public String toString() {
+        return leiras; 
+    }
 }
