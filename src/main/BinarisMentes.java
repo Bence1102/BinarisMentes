@@ -14,12 +14,13 @@ import java.util.logging.Logger;
 public class BinarisMentes {
     
     private Karakter karakter;
-    
+    private final String fn="karakter_1.bin";
     
     public static void main(String[] args){
         BinarisMentes prg = new BinarisMentes();
         prg.letrehozas();
-        prg.mentes();
+        //prg.mentes();
+        prg.bettoltes();
         
     }
 
@@ -29,7 +30,7 @@ public class BinarisMentes {
     }
     
     public void mentes(){
-        try (FileOutputStream fajlKi = new FileOutputStream("karakter.bin");
+        try (FileOutputStream fajlKi = new FileOutputStream(fn);
             ObjectOutputStream objKi = new ObjectOutputStream(fajlKi);){
             objKi.writeObject(karakter);
             
@@ -48,7 +49,7 @@ public class BinarisMentes {
     
     
     public void bettoltes(){
-        try (FileInputStream fajlBe = new FileInputStream("karakter.bin");
+        try (FileInputStream fajlBe = new FileInputStream(fn);
             ObjectInputStream objBe = new ObjectInputStream(fajlBe);){
             karakter = (Karakter) objBe.readObject();
             System.out.println(karakter);
